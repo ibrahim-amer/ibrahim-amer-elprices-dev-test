@@ -4,6 +4,11 @@ const config = require('./config');
 const productsManager = require('./productsManager');
 var app = express();
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.get('/', function(req, res){
    res.send("Hello ibrahim!");
@@ -23,6 +28,6 @@ app.get('/getallproductsbyname/:name', function (req, res) {
 });
 
 
-
+  
 
 app.listen(4000);
