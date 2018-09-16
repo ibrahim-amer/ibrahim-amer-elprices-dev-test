@@ -8,6 +8,11 @@
   height: 150px;
   padding: 20px;
   color: white;
+  background: linear-gradient(150deg, #e4e4e4 15%, #ffffff 70%, #d8d8d8 94%);
+  clip-path: polygon(100% 0, 100% 70%, 0 99%, 0 0);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
 .App-title {
