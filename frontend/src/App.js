@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src='https://static.elprices.com/images/content/large/1bnccHsRM-2c830cf86ecf3a83.png' className="App-logo" alt="logo" />
         </header>
         <SearchBar />
       </div>

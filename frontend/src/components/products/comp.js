@@ -13,14 +13,18 @@ class Product extends Component{
             brand: this.props.brand ? this.props.brand : ''
         }
     }
-
+ 
     render() {
         return (
-            <div>
-                <img src={this.state.image} width='50' height='50' />
-                <label>{this.state.name}</label>
-                <label>{this.state.price}</label>
-                <label>{this.state.brand}</label>
+            <div width='auto' height='auto'>
+                <img src={this.state.image} className='product-image' />
+                <label title={this.state.name} className='product-name'>{this.state.name.substring(0, 60) + ' ...'}</label>
+                <label className='product-price'>Price: {this.state.price}</label>
+                <br/>
+                <label className='product-cat-brand'>Brand: {this.state.brand}</label>
+                <br/>
+                <label className='product-cat-brand'>Category: {this.state.category.name}</label>
+                
                 <hr />
                
             </div> 

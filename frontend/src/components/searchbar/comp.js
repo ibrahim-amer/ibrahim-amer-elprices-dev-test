@@ -11,7 +11,7 @@ class SearchBar extends Component {
         super(props);
         this.state = {
             products: [],
-            noResultsFound: 'No results found!',
+            noResultsFound: 'No products found!',
             showNotFound: false
         }
         this.service = new SearchBarService();
@@ -21,10 +21,10 @@ class SearchBar extends Component {
         let comp = this;
        
         this.setState({
-            products: []
+            products: [],
+            showNotFound: false
         })
         this.service.getAllProductsByName(e.target.value, function (products) {
-            debugger;
             if (products.length > 0) {
                 comp.setState({
                     products: products
@@ -39,12 +39,13 @@ class SearchBar extends Component {
     }
     render() {
         return (
-            <div>
-                    <input
+            <div className='search-div'>
+                    <input className='search-bar'
                         placeholder="Search for..."
                         ref={input => this.search = input}
                         onChange={this.handleInputChange.bind(this)}
                     />
+                    <br />
                     {
                         this.state.products && this.state.products.length > 0 ?
                             this.state.products.map((product, i) =>
@@ -56,7 +57,9 @@ class SearchBar extends Component {
                                     price={product.price}
                                     brand={product.brand} />) : ''
                     }
-                    <h1 hidden={!this.state.showNotFound}>{this.state.noResultsFound}</h1>
+                    <h1 style={{
+                        color: 'darkcyan'
+                    }}hidden={!this.state.showNotFound}>{this.state.noResultsFound}</h1>
             </div>
 
         );

@@ -1,0 +1,27 @@
+.product-image {
+    margin-left: -10vw;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.product-name 
+{
+    margin-left: 2vw;
+    word-wrap: break-word;
+    cursor: pointer;
+    color: darkcyan
+}
+
+
+
+.product-price{
+    margin-left: 6vw;
+    color: darkseagreen
+}
+
+.product-cat-brand {
+    margin-left: 35vw;
+    color: darkseagreen
+}
+
